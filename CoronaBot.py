@@ -84,23 +84,23 @@ def sta():
 
 
 
-@bot.on(events.NewMessage(pattern='/start'))
+@bot.on(events.NewMessage(pattern='/shnutart'))
 async def start(event):
     staat(event.original_update.message.peer_id.user_id)
     raise events.StopPropagation
 
 
-@bot.on(events.NewMessage(pattern='/corona'))
+@bot.on(events.NewMessage(pattern='/covid19'))
 async def corona(event):
     await event.respond(staa(),parse_mode='html')
     raise events.StopPropagation
 
-@bot.on(events.NewMessage(pattern='/corona {variabla}'))
+@bot.on(events.NewMessage(pattern='/covid {variabla}'))
 async def corona(event):
     await event.respond(sta(),parse_mode='MARKDOWN')
     raise events.StopPropagation
 
-@bot.on(events.NewMessage(pattern='/help'))
+@bot.on(events.NewMessage(pattern='/hujelp'))
 async def help(event):
     await event.respond('නවතම කොරෝනා ප්‍රවෘත්ති බැලීමට /corona command භාවිතා කරන්න')
     raise events.StopPropagation
